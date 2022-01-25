@@ -8,7 +8,7 @@ module.exports = app => {
     const params = {
       template: 'default',
       subject: 'Simple Transactional Email',
-      context: { title: 'Welcome' }
+      context: req.body
     }
 
     const response = await mailer.sendEmail(emails, params)

@@ -30,12 +30,12 @@
 				background-color: #f6f9fc;
 				padding-bottom: 40px;
 			}
-			
+
 			.webkit {
 				max-width: 600px;
 				background-color: #FFFFFF;
 			}
-			
+
 			.outer {
 				margin: 0 auto;
 				width: 100%;
@@ -45,58 +45,58 @@
 				color: #333333;
 				background-color: #FFFFFF;
 			}
-      
+
 			.generalPadding {
 				padding: 30px;
 			}
-			
+
 			.twoColumns {
 				font-size: 0;
 			}
-			
+
 			.twoColumns .firstColumn {
 				display: inline-block;
 				vertical-align: top;
 			}
-			
+
 			.twoColumns .secondColumn {
 				display: inline-block;
 				vertical-align: top;
 			}
-			
+
 			.twoColumns .firstColumnS {
 				display: inline-block;
 				vertical-align: top;
 			}
-			
+
 			.twoColumns .secondColumnS {
 				display: inline-block;
 				vertical-align: top;
 			}
-			
+
 			.firstColumn {
 				width: 35%;
 			}
-			
+
 			.secondColumn {
 				width: 65%;
 			}
-			
+
 			.firstColumnS {
 				width: 10%;
 			}
-			
+
 			.secondColumnS {
 				width: 90%;
 			}
-			
+
 			h1 {
 				font-size: 22px;
 				font-weight: 700;
 				line-height: 30px;
 				margin: 0;
 			}
-			
+
 			h2 {
 				font-size: 22px;
 				font-weight: 400;
@@ -115,22 +115,22 @@
 				font-weight: 600;
 				line-height: 30px;
 				margin: 0;
-			}      
-			
+			}
+
 			p, li {
 				font-size: 16px;
 				font-weight: 400;
 				line-height: 22px;
 				margin: 0;
 			}
-			
+
 			a {
 				color: #3F8CFF;
 			}
 
-			@media screen and (max-width: 600px) { 
+			@media screen and (max-width: 600px) {
 			}
-			@media screen and (max-width: 400px) { 
+			@media screen and (max-width: 400px) {
 			}
 		</style>
 	</head>
@@ -148,12 +148,12 @@
 					<tr>
 						<td class='generalPadding' style='padding-bottom:10px'>
 							<table>
-								<h1>William Jordan</h1>
-								<h2>Senior Backend Developer</h2>
+								<h1>{{name}}</h1>
+								<h2>{{position}}</h2>
 							</table>
 						</td>
 					</tr>
- <!-- Third block: Main info -->          
+ <!-- Third block: Main info -->
 					<tr>
 						<td class='generalPadding' style='padding-top:0'>
 							<table width='100%' style='border-spacing:5px'>
@@ -169,10 +169,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>Senior Back End Developer highly talented Full Stack Engineer that could be a great fit for the Zumper team. <a href='#'>Review resume</a></p>
+													<p>{{bio}}. <a href=`{{resumeLink}}`>Review resume</a></p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -187,10 +187,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>5 years</p>
+													<p>{{experience}}</p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -205,10 +205,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>Bogotá, Colombia</p>
+													<p>{{location}}</p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -223,7 +223,7 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>February 8, 2022</p>
+													<p>{{earliestAvailability}}</p>
 												</td>
 											</tr>
 										</table>
@@ -241,10 +241,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>Upper-intermediate</p>
+													<p>{{english}}</p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -259,10 +259,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>Node.js, React.js , Redux Hooks, MVV, MVVM</p>
+													<p>{{expert}}</p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -277,10 +277,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>React Native, Angular</p>
+													<p>{{intermediate}}</p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -295,10 +295,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>Good. <a href='#'>Review test</a></p>
+													<p>{{testTask}}. <a href=`{{testLink}}`>Review test</a></p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -313,10 +313,10 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>Average. <a href='#'>Review inteview</a></p>
+													<p>{{techInterview}}. <a href=`{{interviewLink}}`>Review inteview</a></p>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 								<tr>
@@ -331,7 +331,7 @@
 										<table class='secondColumn'>
 											<tr>
 												<td>
-													<p>Excellenct</p>
+													<p>{{softSkills}}</p>
 												</td>
 											</tr>
 										</table>
@@ -345,8 +345,7 @@
 						<td class='generalPadding'>
 							<table>
 								<h1>Summary</h1>
-								<p style='padding-top:10px'>Today I’m writing to introduce you to a highly talented Full Stack Engineer that could be a great fit for the Zumper team.<br><br>
-									Candidate’s Name is already a key part of the AgileEngine team, he is currently looking for his next big challenge, after the termination of his current project. Nonetheless, below you can find the feedback from his current team at AgileEngine.</p>
+								<p style='padding-top:10px'>{{summary}}</p>
 							</table>
 						</td>
 					</tr>
@@ -360,7 +359,7 @@
 										<table class='firstColumnS'>
 											<tr>
 												<td>
-													<h3 style='margin-top:-3.5px'>Pros</h3> 
+													<h3 style='margin-top:-3.5px'>Pros</h3>
 												</td>
 											</tr>
 										</table>
@@ -369,17 +368,8 @@
 												<td>
 													<table>
 														<ul>
-															<li style='padding-bottom:10px'>
-																Experience with frontend automation (Java and Python using Selenium Webdriver); he uses git as code repository and sometimes implements Cucumber/Gherkin for BDD;
-
-															</li>
-															<li style='padding-bottom:10px'>
-																Experience with Agile Methodologies (Scrum and Kanban) using Jira and Confluence;
-
-															</li>
-															<li style='padding-bottom:10px'>
-																Experience with manual testing.
-															</li>                              
+															<!-- For each element in the array: prosArray, display a <li> tag -->
+															{{#each propsArray}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
 														</ul>
 													</table>
 												</td>
@@ -392,7 +382,7 @@
 										<table class='firstColumnS'>
 											<tr>
 												<td>
-													<h3 style='margin-top:-3.5px'>Cons</h3> 
+													<h3 style='margin-top:-3.5px'>Cons</h3>
 												</td>
 											</tr>
 										</table>
@@ -401,23 +391,13 @@
 												<td>
 													<table>
 														<ul>
-															<li style='padding-bottom:10px'>
-																No experience with backend automation (just a little Postman for manual);
-															</li>
-															<li style='padding-bottom:10px'>
-																No experience with mobile automation;
-															</li>
-															<li style='padding-bottom:10px'>
-																No experience with e-commerce;
-															</li>
-															<li style='padding-bottom:10px'>
-																No experience with Jenkins.
-															</li>
+															<!-- For each element in the array: consArray, display a <li> tag -->
+															{{#each consArray}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
 														</ul>
 													</table>
 												</td>
 											</tr>
-										</table>                    
+										</table>
 									</td>
 								</tr>
 							</table>
@@ -427,20 +407,13 @@
 					<tr style='background:#F4F4F4'>
 						<td class='generalPadding'>
 							<table>
-								<h1>Schedule a call with William Jordan</h1>
-								<p style='padding-top:10px'>Candidate’s Name is available for an interview on:</p>
+								<h1>Schedule a call with {{name}}</h1>
+								<p style='padding-top:10px'>{{name}} is available for an interview on:</p>
 								<ul>
-									<li style='padding-bottom:5px'>
-										Monday, October 18th, between 12 pm and 2 pm (PDT);
-									</li>
-									<li style='padding-bottom:5px'>
-										Tuesday, October 19th, from 9 am to 2 pm (PDT);
-									</li>
-									<li style='padding-bottom:5px'>
-										Wednesday, October 20th, from 11 am to 2 pm (PDT).
-									</li>                              
+									<!-- For each element in the array: scheduleArray, display a <li> tag -->
+									{{#each scheduleArray}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
 								</ul>
-								<p><a href='#'>Schedule meeting</a></p>
+								<p><a href=`{{scheduleLink}}`>Schedule meeting</a></p>
 							</table>
 						</td>
 					</tr>
