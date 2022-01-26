@@ -1,12 +1,12 @@
 const fs = require("fs")
 const nodemailer = require('nodemailer')
 const hbs = require('nodemailer-express-handlebars')
+const keys = require('@config/config')
 
 module.exports.sendEmail = (emails, params) => {
   return new Promise((resolve, reject) => {
 
     let transporter, hbsOptions, mailOptions
-    const fromEmail = process.env.GOOGLE_EMAIL
 
     // SMTP Transport
     transporter = nodemailer.createTransport({
@@ -15,11 +15,11 @@ module.exports.sendEmail = (emails, params) => {
       secure: true,
       auth: {
         type: 'OAuth2',
-        user: fromEmail,
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        accessToken: process.env.GOOGLE_ACCESS_TOKEN,
-        refreshToken: process.env.GOOGLE_REFRESH_TOKEN
+        user: keys.googleUser,
+        clientId: keys.googleClientID,
+        clientSecret: keys.googleClientSecret,
+        accessToken: keys.googleAccessToken,
+        refreshToken: keys.googleRefreshToken
       }
     })
 
@@ -27,11 +27,11 @@ module.exports.sendEmail = (emails, params) => {
     hbsOptions = {
       viewEngine: {
         extname: '.html',
-        layoutsDir: 'modules/views/',
-        defaultLayout: params.template,
-        partialsDir: 'modules/views/partials/'
+        layoutsDir: 'views/',
+        defaultLayout: 'email',
+        partialsDir: 'views/partials/'
       },
-      viewPath: 'modules/views/',
+      viewPath: 'views/',
       extName: '.html'
     }
 
@@ -39,10 +39,11 @@ module.exports.sendEmail = (emails, params) => {
 
     // Email Setup
     mailOptions = {
-      from: `"Test" <${fromEmail}>`,
-      to: emails.join(),
+      from: `"Test" <${keys.googleUser}>`,
+      to: emails,
+      replyTo: params.replyTo,
       subject: params.subject,
-      template: params.template,
+      template: 'email',
       context: params.context
     }
 

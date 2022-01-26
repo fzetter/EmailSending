@@ -1,3 +1,4 @@
+const config = require('@config/config')
 const mailer = require('@modules/mailer.js')
 
 module.exports = app => {
@@ -6,7 +7,7 @@ module.exports = app => {
 
     const emails = req.body.emails
     const params = {
-      template: 'default',
+      replyTo: 'fernanda.zetter@agileengine.com',
       subject: 'Simple Transactional Email',
       context: req.body
     }

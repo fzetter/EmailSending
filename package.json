@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "_moduleAliases": {
+    "@config": "./config",
+    "@public": "./public",
     "@routes": "./routes",
-    "@modules": "./modules"
+    "@modules": "./modules",
+    "@views": "./views"
   },
   "scripts": {
     "start": "node app.js"
@@ -17,6 +20,7 @@
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
+    "hbs": "^4.2.0",
     "module-alias": "^2.2.2",
     "nodemailer": "^6.7.2",
     "nodemailer-express-handlebars": "^4.0.0"
