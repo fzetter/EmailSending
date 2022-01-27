@@ -5,7 +5,7 @@ module.exports = app => {
 
   app.get('/form', (req, res) => {
     console.log(req.user)
-    const recruiterEmail = (req.user ? req.user.email : '')
+    const recruiterEmail = ''
     res.render('form', { title: 'DSP Email Sending', recruiterEmail: recruiterEmail })
   })
 
