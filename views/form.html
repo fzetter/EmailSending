@@ -1,6 +1,7 @@
 <div class="jumbotron">
     <div class="container">
         <h2>Candidate Email Sending</h2>
+        <h5>Recruiter Email: {{recruiterEmail}}</h5>
     </div>
 </div>
 
@@ -8,14 +9,7 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <form action="/" method="post" role="form" enctype="application/x-www-form-urlencoded">
-                <legend>Recruiter Email:</legend>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" name="replyTo" id="replyTo" placeholder="Email"
-                    value="fernanda.zetter@agileengine.com">
-                </div>
-
+            <form action="/form" method="post" role="form" enctype="application/x-www-form-urlencoded">
                 <legend>Candidate Submission:</legend>
 
                 <!-- *** -->
@@ -154,6 +148,14 @@ Experience with manual testing.</textarea>
 No experience with mobile automation.
 No experience with e-commerce.
 No experience with Jenkins.</textarea>
+                </div>
+
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="scheduleArray">Schedule</label>
+                    <textarea type="text" class="form-control" name="scheduleArray" id="scheduleArray" placeholder="Schedule">Monday, October 18th, between 12 pm and 2 pm (PDT)
+Tuesday, October 19th, from 9 am to 2 pm (PDT)
+Wednesday, October 20th, from 11 am to 2 pm (PDT)</textarea>
                 </div>
 
                 <!-- Submit -->

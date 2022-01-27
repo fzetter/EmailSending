@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer')
 const hbs = require('nodemailer-express-handlebars')
 const keys = require('@config/config')
 
-module.exports.sendEmail = (emails, params) => {
+module.exports.sendEmail = (emails, user, params) => {
   return new Promise((resolve, reject) => {
 
     let transporter, hbsOptions, mailOptions
@@ -15,11 +15,8 @@ module.exports.sendEmail = (emails, params) => {
       secure: true,
       auth: {
         type: 'OAuth2',
-        user: keys.googleUser,
         clientId: keys.googleClientID,
-        clientSecret: keys.googleClientSecret,
-        accessToken: keys.googleAccessToken,
-        refreshToken: keys.googleRefreshToken
+        clientSecret: keys.googleClientSecret
       }
     })
 
@@ -41,10 +38,15 @@ module.exports.sendEmail = (emails, params) => {
     mailOptions = {
       from: `"Test" <${keys.googleUser}>`,
       to: emails,
-      replyTo: params.replyTo,
+      //replyTo: params.replyTo,
       subject: params.subject,
       template: 'email',
-      context: params.context
+      context: params.context,
+      auth: {
+        user: user.email,
+        accessToken: user.accessToken,
+        refreshToken: user.refreshToken
+      }
     }
 
     // Send Email

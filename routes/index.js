@@ -1,5 +1,5 @@
 const config = require('@config/config')
-const mailer = require('@modules/mailer.js')
+const passport = require('passport')
 
 module.exports = app => {
 
@@ -11,25 +11,17 @@ module.exports = app => {
   })
 
   app.get('/', (req, res) => {
-    res.render('index', { title: 'Node Tutorial' })
+    res.render('login')
   })
 
-  app.post('/', async (req, res) => {
-    const body = req.body
-    body.prosArray = body.prosArray.split('\r\n')
-    body.consArray = body.consArray.split('\r\n')
+  app.post('/', passport.authenticate('google', {
+    scope: [
+      'profile', 'email',
+      'https://mail.google.com/'
+    ],
+    accessType: 'offline'
+  }))
 
-    const response = await mailer.sendEmail(body.email, {
-      replyTo: body.replyTo,
-      subject: 'Simple Transactional Email',
-      context: body
-    })
-
-    res.render('message', {
-      replyTo: body.replyTo,
-      email: body.email
-    })
-
-  })
+  app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => res.redirect('/form'))
 
 }

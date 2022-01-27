@@ -432,7 +432,21 @@
 											</tr>
 										</table>
 									</td>
+
 								</tr>
+							</table>
+						</td>
+					</tr>
+<!-- Fourth block: Summary -->
+					<tr style='background:#F4F4F4'>
+						<td style="padding:30px">
+							<table>
+								<h1>Schedule a meeting with {{name}}</h1>
+								<p style='padding-top:10px'>{{name}} is available for an interview on:</p>
+								<ul style="padding-top:5px">
+									<!-- For each element in the array: scheduleArray, display a <li> tag -->
+									{{#each scheduleArray}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
+								</ul>
 							</table>
 						</td>
 					</tr>

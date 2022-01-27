@@ -1,8 +1,11 @@
 require('dotenv').config()
 require('module-alias/register')
+require('@modules/passport')
 const cors = require('cors')
 const express = require('express')
-const { port, env } = require('@config/config')
+const passport = require('passport')
+const cookieSession = require('cookie-session')
+const { port, env, cookieKey } = require('@config/config')
 
 const app = express()
 app.use(express.json())
@@ -10,7 +13,18 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(process.cwd() + '/public'))
 app.use(cors({'origin': true}))
 
+/* Sessions */
+app.use(cookieSession({
+  maxAge: 30 * 24 * 60 * 60 * 1000,
+  keys: [cookieKey]
+}))
+
+/* Passport */
+app.use(passport.initialize())
+app.use(passport.session())
+
 /* Routes */
+require('./routes/form')(app)
 require('./routes/index')(app)
 require('./routes/services')(app)
 

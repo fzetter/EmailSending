@@ -17,12 +17,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
+    "googleapis": "^92.0.0",
     "hbs": "^4.2.0",
     "module-alias": "^2.2.2",
     "nodemailer": "^6.7.2",
-    "nodemailer-express-handlebars": "^4.0.0"
+    "nodemailer-express-handlebars": "^4.0.0",
+    "passport": "^0.5.2",
+    "passport-google-oauth20": "^2.0.0"
   }
 }
