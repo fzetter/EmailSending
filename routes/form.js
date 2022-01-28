@@ -4,7 +4,8 @@ const mailer = require('@modules/mailer.js')
 module.exports = app => {
 
   app.get('/form', (req, res) => {
-    if (req.user) res.render('form', { title: 'Candidate Email Sending', recruiterEmail: req.user.email })
+    const template = (req.query.eg ? 'example' : 'form')
+    if (req.user) res.render(template, { title: 'Candidate Email Sending', recruiterEmail: req.user.email })
     else res.redirect('/')
   })
 
