@@ -38,7 +38,7 @@ module.exports.sendEmail = (emails, user, params) => {
     mailOptions = {
       from: `"Test" <${keys.googleUser}>`,
       to: emails,
-      //replyTo: params.replyTo,
+      cc: params.cc,
       subject: params.subject,
       template: 'email',
       context: params.context,
@@ -48,6 +48,8 @@ module.exports.sendEmail = (emails, user, params) => {
         refreshToken: user.refreshToken
       }
     }
+
+    if (params.replyTo) mailOptions.replyTo = params.replyTo
 
     // Send Email
     transporter.sendMail(mailOptions, (err, res) => {

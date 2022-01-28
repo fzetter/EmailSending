@@ -1,8 +1,13 @@
-<div class="jumbotron">
-    <div class="container">
-        <h1>Email successfully sent!</h1>
-        <br>
-        <p>Recruiter email: {{recruiterEmail}}</p>
-        <p>Candidate email: {{candidateEmail}}</p>
-    </div>
+<div class="container">
+    <h1>Email successfully sent!</h1>
+    <br>
+
+    <legend>From:</legend>
+    <li style='padding-bottom:10px'>{{recruiterEmail}}</li>
+
+    <legend>To:</legend>
+    <li style='padding-bottom:10px'>{{candidateEmail}}</li>
+
+    <legend>CC:</legend>
+    {{#each cc}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
 </div>

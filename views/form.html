@@ -1,8 +1,5 @@
-<div class="jumbotron">
-    <div class="container">
-        <h2>Candidate Email Sending</h2>
-        <h5>Recruiter Email: {{recruiterEmail}}</h5>
-    </div>
+<div class="container">
+    <h5>Recruiter email: {{recruiterEmail}}</h5>
 </div>
 
 <div class="container">
@@ -10,102 +7,119 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <form action="/form" method="post" role="form" enctype="application/x-www-form-urlencoded">
+
+                <legend>Compose:</legend>
+
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                    value="William Jordan - Candidate Submission">
+                </div>
+
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="ccArray">CC</label>
+                    <textarea type="text" class="form-control" name="ccArray" id="ccArray" placeholder="CC">zetter.fer@gmail.com
+fernanda.zetter@agileengine.com</textarea>
+                </div>
+
                 <legend>Candidate Submission:</legend>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Name *</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Name"
                     value="William Jordan">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email *</label>
                     <input type="text" class="form-control" name="email" id="email" placeholder="Email"
                     value="zetter.fer@gmail.com">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="position">Position</label>
+                    <label for="position">Position *</label>
                     <input type="text" class="form-control" name="position" id="position" placeholder="Position"
                     value="Junior Backend Developer">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="bio">Bio</label>
+                    <label for="bio">Bio *</label>
                     <input type="text" class="form-control" name="bio" id="bio" placeholder="Bio"
                     value="Highly talented Full Stack Engineer that could be a great fit for the Zumper team.">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="resumeLink">CV Link</label>
+                    <label for="resumeLink">CV Link *</label>
                     <input type="text" class="form-control" name="resumeLink" id="resumeLink" placeholder="CV Link"
                     value="http://example.com/">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="experience">Experience</label>
+                    <label for="experience">Experience *</label>
                     <input type="text" class="form-control" name="experience" id="experience" placeholder="Experience"
                     value="5 years">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="location">Location</label>
+                    <label for="location">Location *</label>
                     <input type="text" class="form-control" name="location" id="location" placeholder="Location"
                     value="Bogotá, Colombia">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="earliestAvailability">Earliest Availability</label>
+                    <label for="earliestAvailability">Earliest Availability *</label>
                     <input type="text" class="form-control" name="earliestAvailability" id="earliestAvailability" placeholder="Earliest Availability"
                     value="February 8, 2022">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="english">English</label>
+                    <label for="english">English *</label>
                     <input type="text" class="form-control" name="english" id="english" placeholder="English"
                     value="Upper-intermediate">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="expert">Expert</label>
+                    <label for="expert">Expert *</label>
                     <input type="text" class="form-control" name="expert" id="expert" placeholder="Expert"
                     value="Node.js, Angular, Redux Hooks, MVV, MVVM">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="intermediate">Intermediate</label>
+                    <label for="intermediate">Intermediate *</label>
                     <input type="text" class="form-control" name="intermediate" id="intermediate" placeholder="Intermediate"
                     value="React Native, React.js">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="testTask">Test Task</label>
+                    <label for="testTask">Test Task *</label>
                     <input type="text" class="form-control" name="testTask" id="testTask" placeholder="Test Task"
                     value="Good">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="testLink">Test Link</label>
+                    <label for="testLink">Test Link *</label>
                     <input type="text" class="form-control" name="testLink" id="testLink" placeholder="Test Link"
                     value="http://example.com/">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="techInterview"> Tech Interview</label>
+                    <label for="techInterview">Tech Interview *</label>
                     <input type="text" class="form-control" name="techInterview" id="techInterview" placeholder=" Tech Interview"
                     value="Good">
                 </div>
@@ -119,14 +133,14 @@
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="softSkills">Soft Skills</label>
+                    <label for="softSkills">Soft Skills *</label>
                     <input type="text" class="form-control" name="softSkills" id="softSkills" placeholder="Soft Skills"
                     value="Excellent">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="summary">Summary</label>
+                    <label for="summary">Summary *</label>
                     <textarea type="text" class="form-control" name="summary" id="summary" placeholder="Summary">Today I’m writing to introduce you to a highly talented Full Stack Engineer that could be a great fit for the Zumper team.
 
 Candidate’s Name is already a key part of the AgileEngine team, he is currently looking for his next big challenge, after the termination of his current project. Nonetheless, below you can find the feedback from his current team at AgileEngine.</textarea>
@@ -134,7 +148,7 @@ Candidate’s Name is already a key part of the AgileEngine team, he is currentl
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="prosArray">Pros</label>
+                    <label for="prosArray">Pros (insert each skill on a new line) *</label>
                     <textarea type="text" class="form-control" name="prosArray" id="prosArray" placeholder="Pros">Experience with frontend automation (Java and Python using Selenium Webdriver).
 He uses git as code repository and sometimes implements Cucumber/Gherkin for BDD.
 Experience with Agile Methodologies (Scrum and Kanban) using Jira and Confluence.
@@ -143,7 +157,7 @@ Experience with manual testing.</textarea>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="consArray">Cons</label>
+                    <label for="consArray">Cons (insert each skill on a new line) *</label>
                     <textarea type="text" class="form-control" name="consArray" id="consArray" placeholder="Cons">No experience with backend automation (just a little Postman for manual).
 No experience with mobile automation.
 No experience with e-commerce.
@@ -152,7 +166,7 @@ No experience with Jenkins.</textarea>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="scheduleArray">Schedule</label>
+                    <label for="scheduleArray">Schedule (insert each option on a new line) *</label>
                     <textarea type="text" class="form-control" name="scheduleArray" id="scheduleArray" placeholder="Schedule">Monday, October 18th, between 12 pm and 2 pm (PDT)
 Tuesday, October 19th, from 9 am to 2 pm (PDT)
 Wednesday, October 20th, from 11 am to 2 pm (PDT)</textarea>
