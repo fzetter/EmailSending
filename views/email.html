@@ -363,7 +363,7 @@
 						<td style="padding:30px">
 							<table>
 								<h1>Summary</h1>
-								<p style='padding-top:10px'>{{summary}}</p>
+								{{#each summary}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
 							</table>
 						</td>
 					</tr>

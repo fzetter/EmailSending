@@ -1,402 +1,179 @@
-<!doctype html>
-<html>
+<div class="container">
+    <h5>Recruiter email: {{recruiterEmail}}</h5>
+</div>
 
-  <!-- ** START HEAD ** -->
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Simple Transactional Email</title>
+<div class="container">
 
-    <style>
-      /* -------------------------------------
-          GLOBAL RESETS
-      ------------------------------------- */
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form action="/form" method="post" role="form" enctype="application/x-www-form-urlencoded">
 
-      img {
-        border: none;
-        -ms-interpolation-mode: bicubic;
-        max-width: 100%;
-      }
+                <legend>Compose:</legend>
 
-      body {
-        background-color: #f6f6f6;
-        font-family: sans-serif;
-        -webkit-font-smoothing: antialiased;
-        font-size: 14px;
-        line-height: 1.4;
-        margin: 0;
-        padding: 0;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required
+                    value="William Jordan - Candidate Submission">
+                </div>
 
-      table {
-        border-collapse: separate;
-        mso-table-lspace: 0pt;
-        mso-table-rspace: 0pt;
-        width: 100%; }
-        table td {
-          font-family: sans-serif;
-          font-size: 14px;
-          vertical-align: top;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="ccArray">CC</label>
+                    <textarea type="text" class="form-control" name="ccArray" id="ccArray" placeholder="CC"></textarea>
+                </div>
 
-      /* -------------------------------------
-          BODY & CONTAINER
-      ------------------------------------- */
+                <legend>Candidate Submission:</legend>
 
-      .body {
-        background-color: #f6f6f6;
-        width: 100%;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Name" required
+                    value="William Jordan">
+                </div>
 
-      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-      .container {
-        display: block;
-        margin: 0 auto !important;
-        /* makes it centered */
-        max-width: 580px;
-        padding: 10px;
-        width: 580px;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email" required
+                    value="zetter.fer@gmail.com">
+                </div>
 
-      /* This should also be a block element, so that it will fill 100% of the .container */
-      .content {
-        box-sizing: border-box;
-        display: block;
-        margin: 0 auto;
-        max-width: 580px;
-        padding: 10px;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="position">Position *</label>
+                    <input type="text" class="form-control" name="position" id="position" placeholder="Position" required
+                    value="Junior Backend Developer">
+                </div>
 
-      /* -------------------------------------
-          HEADER, FOOTER, MAIN
-      ------------------------------------- */
-      .main {
-        background: #ffffff;
-        border-radius: 3px;
-        width: 100%;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="bio">Bio *</label>
+                    <input type="text" class="form-control" name="bio" id="bio" placeholder="Bio" required
+                    value="Highly talented Full Stack Engineer that could be a great fit for the Zumper team.">
+                </div>
 
-      .wrapper {
-        box-sizing: border-box;
-        padding: 20px;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="resumeLink">CV Link *</label>
+                    <input type="text" class="form-control" name="resumeLink" id="resumeLink" placeholder="CV Link" required
+                    value="http://example.com/">
+                </div>
 
-      .content-block {
-        padding-bottom: 10px;
-        padding-top: 10px;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="experience">Experience *</label>
+                    <input type="text" class="form-control" name="experience" id="experience" placeholder="Experience" required
+                    value="5 years">
+                </div>
 
-      .footer {
-        clear: both;
-        margin-top: 10px;
-        text-align: center;
-        width: 100%;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="location">Location *</label>
+                    <input type="text" class="form-control" name="location" id="location" placeholder="Location" required
+                    value="Bogotá, Colombia">
+                </div>
 
-      .footer td,
-      .footer p,
-      .footer span,
-      .footer a {
-        color: #999999;
-        font-size: 12px;
-        text-align: center;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="earliestAvailability">Earliest Availability *</label>
+                    <input type="text" class="form-control" name="earliestAvailability" id="earliestAvailability" placeholder="Earliest Availability"
+                    required value="February 8, 2022">
+                </div>
 
-      /* -------------------------------------
-          TYPOGRAPHY
-      ------------------------------------- */
-      h1, h2, h3, h4 {
-        color: #000000;
-        font-family: sans-serif;
-        font-weight: 400;
-        line-height: 1.4;
-        margin: 0;
-        margin-bottom: 30px;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="english">English *</label>
+                    <input type="text" class="form-control" name="english" id="english" placeholder="English" required
+                    value="Upper-intermediate">
+                </div>
 
-      h1 {
-        font-size: 35px;
-        font-weight: 300;
-        text-align: center;
-        text-transform: capitalize;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="expert">Expert *</label>
+                    <input type="text" class="form-control" name="expert" id="expert" placeholder="Expert" required
+                    value="Node.js, Angular, Redux Hooks, MVV, MVVM">
+                </div>
 
-      p, ul, ol {
-        font-family: sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        margin: 0;
-        margin-bottom: 15px;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="intermediate">Intermediate *</label>
+                    <input type="text" class="form-control" name="intermediate" id="intermediate" placeholder="Intermediate"
+                    required value="React Native, React.js">
+                </div>
 
-      p li,
-      ul li,
-      ol li {
-        list-style-position: inside;
-        margin-left: 5px;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="testTask">Test Task *</label>
+                    <input type="text" class="form-control" name="testTask" id="testTask" placeholder="Test Task" required
+                    value="Good">
+                </div>
 
-      a {
-        color: #3498db;
-        text-decoration: underline;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="testLink">Test Link *</label>
+                    <input type="text" class="form-control" name="testLink" id="testLink" placeholder="Test Link" required
+                    value="http://example.com/">
+                </div>
 
-      /* -------------------------------------
-          BUTTONS
-      ------------------------------------- */
-      .btn {
-        box-sizing: border-box;
-        width: 100%; }
-        .btn > tbody > tr > td {
-          padding-bottom: 15px; }
-        .btn table {
-          width: auto;
-      }
-        .btn table td {
-          background-color: #ffffff;
-          border-radius: 5px;
-          text-align: center;
-      }
-        .btn a {
-          background-color: #ffffff;
-          border: solid 1px #3498db;
-          border-radius: 5px;
-          box-sizing: border-box;
-          color: #3498db;
-          cursor: pointer;
-          display: inline-block;
-          font-size: 14px;
-          font-weight: bold;
-          margin: 0;
-          padding: 12px 25px;
-          text-decoration: none;
-          text-transform: capitalize;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="techInterview">Tech Interview *</label>
+                    <input type="text" class="form-control" name="techInterview" id="techInterview" placeholder=" Tech Interview"
+                    required value="Good">
+                </div>
 
-      .btn-primary table td {
-        background-color: #3498db;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="interviewLink">Interview Link</label>
+                    <input type="text" class="form-control" name="interviewLink" id="interviewLink" placeholder="Interview Link"
+                    value="http://example.com/">
+                </div>
 
-      .btn-primary a {
-        background-color: #3498db;
-        border-color: #3498db;
-        color: #ffffff;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="softSkills">Soft Skills *</label>
+                    <input type="text" class="form-control" name="softSkills" id="softSkills" placeholder="Soft Skills"
+                    required value="Excellent">
+                </div>
 
-      /* -------------------------------------
-          OTHER STYLES THAT MIGHT BE USEFUL
-      ------------------------------------- */
-      .last {
-        margin-bottom: 0;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="summary">Summary *</label>
+                    <textarea type="text" class="form-control" name="summary" id="summary" placeholder="Summary" required>Today I’m writing to introduce you to a highly talented Full Stack Engineer that could be a great fit for the Zumper team.
 
-      .first {
-        margin-top: 0;
-      }
+Candidate’s Name is already a key part of the AgileEngine team, he is currently looking for his next big challenge, after the termination of his current project. Nonetheless, below you can find the feedback from his current team at AgileEngine.</textarea>
+                </div>
 
-      .align-center {
-        text-align: center;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="prosArray">Pros (insert each skill on a new line) *</label>
+                    <textarea type="text" class="form-control" name="prosArray" id="prosArray" placeholder="Pros" required>Experience with frontend automation (Java and Python using Selenium Webdriver).
+He uses git as code repository and sometimes implements Cucumber/Gherkin for BDD.
+Experience with Agile Methodologies (Scrum and Kanban) using Jira and Confluence.
+Experience with manual testing.</textarea>
+                </div>
 
-      .align-right {
-        text-align: right;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="consArray">Cons (insert each skill on a new line) *</label>
+                    <textarea type="text" class="form-control" name="consArray" id="consArray" placeholder="Cons" required>No experience with backend automation (just a little Postman for manual).
+No experience with mobile automation.
+No experience with e-commerce.
+No experience with Jenkins.</textarea>
+                </div>
 
-      .align-left {
-        text-align: left;
-      }
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="scheduleArray">Schedule (insert each option on a new line) *</label>
+                    <textarea type="text" class="form-control" name="scheduleArray" id="scheduleArray" placeholder="Schedule" required>Monday, October 18th, between 12 pm and 2 pm (PDT)
+Tuesday, October 19th, from 9 am to 2 pm (PDT)
+Wednesday, October 20th, from 11 am to 2 pm (PDT)</textarea>
+                </div>
 
-      .clear {
-        clear: both;
-      }
-
-      .mt0 {
-        margin-top: 0;
-      }
-
-      .mb0 {
-        margin-bottom: 0;
-      }
-
-      .preheader {
-        color: transparent;
-        display: none;
-        height: 0;
-        max-height: 0;
-        max-width: 0;
-        opacity: 0;
-        overflow: hidden;
-        mso-hide: all;
-        visibility: hidden;
-        width: 0;
-      }
-
-      .powered-by a {
-        text-decoration: none;
-      }
-
-      hr {
-        border: 0;
-        border-bottom: 1px solid #f6f6f6;
-        margin: 20px 0;
-      }
-
-      /* -------------------------------------
-          RESPONSIVE AND MOBILE FRIENDLY STYLES
-      ------------------------------------- */
-      @media only screen and (max-width: 620px) {
-        table.body h1 {
-          font-size: 28px !important;
-          margin-bottom: 10px !important;
-        }
-        table.body p,
-        table.body ul,
-        table.body ol,
-        table.body td,
-        table.body span,
-        table.body a {
-          font-size: 16px !important;
-        }
-        table.body .wrapper,
-        table.body .article {
-          padding: 10px !important;
-        }
-        table.body .content {
-          padding: 0 !important;
-        }
-        table.body .container {
-          padding: 0 !important;
-          width: 100% !important;
-        }
-        table.body .main {
-          border-left-width: 0 !important;
-          border-radius: 0 !important;
-          border-right-width: 0 !important;
-        }
-        table.body .btn table {
-          width: 100% !important;
-        }
-        table.body .btn a {
-          width: 100% !important;
-        }
-        table.body .img-responsive {
-          height: auto !important;
-          max-width: 100% !important;
-          width: auto !important;
-        }
-      }
-
-      /* -------------------------------------
-          PRESERVE THESE STYLES IN THE HEAD
-      ------------------------------------- */
-      @media all {
-        .ExternalClass {
-          width: 100%;
-        }
-        .ExternalClass,
-        .ExternalClass p,
-        .ExternalClass span,
-        .ExternalClass font,
-        .ExternalClass td,
-        .ExternalClass div {
-          line-height: 100%;
-        }
-        .apple-link a {
-          color: inherit !important;
-          font-family: inherit !important;
-          font-size: inherit !important;
-          font-weight: inherit !important;
-          line-height: inherit !important;
-          text-decoration: none !important;
-        }
-        #MessageViewBody a {
-          color: inherit;
-          text-decoration: none;
-          font-size: inherit;
-          font-family: inherit;
-          font-weight: inherit;
-          line-height: inherit;
-        }
-        .btn-primary table td:hover {
-          background-color: #34495e !important;
-        }
-        .btn-primary a:hover {
-          background-color: #34495e !important;
-          border-color: #34495e !important;
-        }
-      }
-    </style>
-  </head>
-  <!-- ** END HEAD ** -->
-
-  <!-- ** START BODY ** -->
-  <body class="">
-    <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
-      <tr>
-        <td>&nbsp;</td>
-        <td class="container">
-          <div class="content">
-
-            <!-- START CENTERED WHITE CONTAINER -->
-            <table role="presentation" class="main">
-
-              <!-- START MAIN CONTENT AREA -->
-              <tr>
-                <td class="wrapper">
-                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <td>
-                        <p>Hi there,</p>
-                        <p>Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
-                          <tbody>
-                            <tr>
-                              <td align="left">
-                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <td> <a href="http://example.com/" target="_blank">Call To Action</a> </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
-                        <p>Good luck! Hope it works.</p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-
-            <!-- END MAIN CONTENT AREA -->
-            </table>
-            <!-- END CENTERED WHITE CONTAINER -->
-
-            <!-- START FOOTER -->
-            <div class="footer">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td class="content-block">
-                    <span class="apple-link">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
-                    <br> Don't like these emails? <a href="http://example.com/">Unsubscribe</a>.
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <!-- END FOOTER -->
-
-          </div>
-        </td>
-        <td>&nbsp;</td>
-      </tr>
-    </table>
-  </body>
-  <!-- ** END BODY ** -->
-
-</html>
+                <!-- Submit -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

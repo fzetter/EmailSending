@@ -4,12 +4,14 @@ const mailer = require('@modules/mailer.js')
 module.exports = app => {
 
   app.get('/form', (req, res) => {
-    res.render('form', { title: 'Candidate Email Sending', recruiterEmail: req.user.email })
+    if (req.user) res.render('form', { title: 'Candidate Email Sending', recruiterEmail: req.user.email })
+    else res.redirect('/')
   })
 
   app.post('/form', async (req, res) => {
     const body = req.body
     if (body.ccArray) body.ccArray = body.ccArray.split('\r\n')
+    if (body.summary) body.summary = body.summary.split('\r\n')
     if (body.prosArray) body.prosArray = body.prosArray.split('\r\n')
     if (body.consArray) body.consArray = body.consArray.split('\r\n')
     if (body.scheduleArray) body.scheduleArray = body.scheduleArray.split('\r\n')
