@@ -36,7 +36,7 @@ module.exports.sendEmail = (emails, user, params) => {
 
     // Email Setup
     mailOptions = {
-      from: `"Test" <${keys.googleUser}>`,
+      from: `<${keys.googleUser}>`,
       to: emails,
       cc: params.cc,
       subject: params.subject,
