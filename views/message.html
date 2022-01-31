@@ -6,7 +6,7 @@
     <li style='padding-bottom:10px'>{{recruiterEmail}}</li>
 
     <legend>To:</legend>
-    <li style='padding-bottom:10px'>{{candidateEmail}}</li>
+    {{#each candidateEmail}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
 
     <legend>CC:</legend>
     {{#each cc}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}

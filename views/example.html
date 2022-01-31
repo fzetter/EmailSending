@@ -12,31 +12,34 @@
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="subject">Subject *</label>
+                    <label for="subject">Email Subject *</label>
                     <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required
-                    value="William Jordan - Candidate Submission">
+                    value="William Jordan - Junior PHP Developer">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="ccArray">CC</label>
-                    <textarea type="text" class="form-control" name="ccArray" id="ccArray" placeholder="CC"></textarea>
+                    <label for="emailArray">To (insert each client email on a new line) *</label>
+                    <textarea type="text" class="form-control" name="emailArray" id="emailArray" required
+                    placeholder="example@gmail.com
+example@gmail.com">zetter.fer@gmail.com</textarea>
+                </div>
+
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="ccArray">CC (insert each email on a new line)</label>
+                    <textarea type="text" class="form-control" name="ccArray" id="ccArray"
+                    placeholder="example@agileengine.com
+example@agileengine.com"></textarea>
                 </div>
 
                 <legend>Candidate Submission:</legend>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="name">Name *</label>
+                    <label for="name">Candidate's Name *</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Name" required
                     value="William Jordan">
-                </div>
-
-                <!-- *** -->
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Email" required
-                    value="zetter.fer@gmail.com">
                 </div>
 
                 <!-- *** -->
@@ -62,7 +65,7 @@
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="experience">Experience *</label>
+                    <label for="experience">Years of Experience *</label>
                     <input type="text" class="form-control" name="experience" id="experience" placeholder="Experience" required
                     value="5 years">
                 </div>
@@ -76,16 +79,20 @@
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="earliestAvailability">Earliest Availability *</label>
+                    <label for="earliestAvailability">Earliest Availability (MM/DD/YYYY) *</label>
                     <input type="text" class="form-control" name="earliestAvailability" id="earliestAvailability" placeholder="Earliest Availability"
-                    required value="February 8, 2022">
+                    required value="02/08/2022">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="english">English *</label>
-                    <input type="text" class="form-control" name="english" id="english" placeholder="English" required
-                    value="Upper-intermediate">
+                  <label for="english">English *</label>
+                  <select class="form-control" name="english" id="english" required>
+                    <option value="" hidden disabled>-- Please select -- </option>
+                    <option>Intermediate</option>
+                    <option selected>Upper-Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
                 </div>
 
                 <!-- *** -->
@@ -104,23 +111,32 @@
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="testTask">Test Task *</label>
-                    <input type="text" class="form-control" name="testTask" id="testTask" placeholder="Test Task" required
-                    value="Good">
+                  <label for="testTask">Test Task *</label>
+                  <select class="form-control" name="testTask" id="testTask" required>
+                    <option value="" hidden disabled>-- Please select -- </option>
+                    <option selected>Excellent</option>
+                    <option>Very Good</option>
+                    <option>Good</option>
+                    <option>Average</option>
+                    <option>Poor</option>
+                  </select>
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="testLink">Test Link *</label>
-                    <input type="text" class="form-control" name="testLink" id="testLink" placeholder="Test Link" required
+                    <label for="testLink">Test Link</label>
+                    <input type="text" class="form-control" name="testLink" id="testLink" placeholder="Test Link"
                     value="http://example.com/">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="techInterview">Tech Interview *</label>
-                    <input type="text" class="form-control" name="techInterview" id="techInterview" placeholder=" Tech Interview"
-                    required value="Good">
+                  <label for="techInterview">Tech Interview *</label>
+                  <select class="form-control" name="techInterview" id="techInterview" required>
+                    <option value="" hidden disabled>-- Please select -- </option>
+                    <option selected>Passed - Candidate is good for this project</option>
+                    <option>Failed - Candidate is not recommended by AE</option>
+                  </select>
                 </div>
 
                 <!-- *** -->
@@ -132,17 +148,21 @@
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="softSkills">Soft Skills *</label>
-                    <input type="text" class="form-control" name="softSkills" id="softSkills" placeholder="Soft Skills"
-                    required value="Excellent">
+                  <label for="softSkills">Soft Skills *</label>
+                  <select class="form-control" name="softSkills" id="softSkills" required>
+                    <option value="" hidden disabled>-- Please select -- </option>
+                    <option>Excellent</option>
+                    <option>Very Good</option>
+                    <option selected>Good</option>
+                    <option>Average</option>
+                    <option>Poor</option>
+                  </select>
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="summary">Summary *</label>
-                    <textarea type="text" class="form-control" name="summary" id="summary" placeholder="Summary" required>Today I’m writing to introduce you to a highly talented Full Stack Engineer that could be a great fit for the Zumper team.
-
-Candidate’s Name is already a key part of the AgileEngine team, he is currently looking for his next big challenge, after the termination of his current project. Nonetheless, below you can find the feedback from his current team at AgileEngine.</textarea>
+                    <textarea type="text" class="form-control" name="summary" id="summary" placeholder="Summary" required>Candidate’s Name is already a key part of the AgileEngine team, he is currently looking for his next big challenge, after the termination of his current project. Nonetheless, below you can find the feedback from his current team at AgileEngine.</textarea>
                 </div>
 
                 <!-- *** -->
@@ -165,7 +185,7 @@ No experience with Jenkins.</textarea>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="scheduleArray">Schedule (insert each option on a new line) *</label>
+                    <label for="scheduleArray">Schedule (insert each option on a new line, ONLY DATES AND TIMES as shown in the example) *</label>
                     <textarea type="text" class="form-control" name="scheduleArray" id="scheduleArray" placeholder="Schedule" required>Monday, October 18th, between 12 pm and 2 pm (PDT)
 Tuesday, October 19th, from 9 am to 2 pm (PDT)
 Wednesday, October 20th, from 11 am to 2 pm (PDT)</textarea>
