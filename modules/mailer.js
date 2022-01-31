@@ -53,7 +53,7 @@ module.exports.sendEmail = (emails, user, params) => {
 
     // Send Email
     transporter.sendMail(mailOptions, (err, res) => {
-      if (err) return reject(new Error(`Mailer: Email could not be sent. Error: ${err}`))
+      if (err) return reject(new Error(`${err}`))
       else return resolve({message: 'Email sent', sentTo: res.accepted})
       transporter.close()
     })
