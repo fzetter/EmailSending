@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.25.0",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",
@@ -27,6 +28,7 @@
     "nodemailer": "^6.7.2",
     "nodemailer-express-handlebars": "^4.0.0",
     "passport": "^0.5.2",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "querystring": "^0.2.1"
   }
 }
