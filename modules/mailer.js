@@ -17,7 +17,7 @@ module.exports.sendEmail = (emails, user, params) => {
       'https://developers.google.com/oauthplayground'
     )
 
-    oauth2Client.setCredentials({ refresh_token: user.refreshToken })
+    oauth2Client.setCredentials({ access_token: user.accessToken, refresh_token: user.refreshToken, expiry_date: true })
     const accessToken = oauth2Client.refreshAccessToken()
 
     // SMTP Transport
