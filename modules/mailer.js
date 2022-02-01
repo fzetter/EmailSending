@@ -18,7 +18,7 @@ module.exports.sendEmail = (emails, user, params) => {
     )
 
     oauth2Client.setCredentials({ refresh_token: user.refreshToken })
-    const accessToken = oauth2Client.getAccessToken()
+    const accessToken = oauth2Client.refreshAccessToken()
 
     // SMTP Transport
     transporter = nodemailer.createTransport({
