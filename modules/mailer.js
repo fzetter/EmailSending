@@ -5,28 +5,8 @@ const keys = require('@config/config')
 const { google } = require("googleapis")
 const OAuth2 = google.auth.OAuth2
 
-// const axios = require('axios')
-// const querystring = require('querystring')
-
-// const getAccessToken = async refreshToken => {
-//   try {
-//     console.log('inside access token ', refreshToken)
-//     const accessTokenObj = await axios.post(
-//       'https://www.googleapis.com/oauth2/v4/token',
-//       querystring.stringify({
-//         refresh_token: refreshToken,
-//         client_id: keys.googleClientID,
-//         client_secret: keys.googleClientSecret,
-//         grant_type: 'refresh_token'
-//       })
-//     )
-//     console.log('inside access token ', accessTokenObj)
-//     return accessTokenObj.data.access_token
-//   } catch (err) { console.log(err) }
-// }
-
 module.exports.sendEmail = (emails, user, params) => {
-  return new Promise(async (resolve, reject) => {
+  return new Promise((resolve, reject) => {
 
     let transporter, hbsOptions, mailOptions
 
@@ -37,12 +17,8 @@ module.exports.sendEmail = (emails, user, params) => {
       'https://developers.google.com/oauthplayground'
     )
 
-    oauth2Client.setCredentials({ access_token: user.accessToken, refresh_token: user.refreshToken, expiry_date: true })
+    oauth2Client.setCredentials({ refresh_token: user.refreshToken })
     const accessToken = oauth2Client.refreshAccessToken()
-
-    // const accessToken = await getAccessToken(user.refreshToken)
-    //
-    // resolve({message: 'Email sent', sentTo: []})
 
     // SMTP Transport
     transporter = nodemailer.createTransport({
