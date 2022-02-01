@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "_moduleAliases": {
+    "@classes": "./classes",
     "@config": "./config",
     "@public": "./public",
     "@routes": "./routes",
