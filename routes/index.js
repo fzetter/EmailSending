@@ -20,7 +20,8 @@ module.exports = app => {
       'profile', 'email',
       'https://mail.google.com/'
     ],
-    accessType: 'offline'
+    accessType: 'offline',
+    prompt: 'consent'
   }))
 
   app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => res.redirect('/form'))
