@@ -6,7 +6,7 @@ module.exports = app => {
   app.get('/about', (req, res) => {
     res.status(200).send({
       name: 'Candidate Email Sending',
-      environment: config.env,
+      environment: config.env
     })
   })
 

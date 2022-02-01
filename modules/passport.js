@@ -13,7 +13,7 @@ passport.use(
       clientSecret: keys.googleClientSecret,
       proxy: true
     },
-    async (accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, params, profile, done) => {
       try {
 
         const user = {
@@ -21,6 +21,7 @@ passport.use(
           email: profile._json.email,
           accessToken: accessToken,
           refreshToken: refreshToken,
+          expiresIn: params.expires_in,
           displayName: profile.displayName
         }
 
