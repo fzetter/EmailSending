@@ -2,11 +2,23 @@ const fs = require("fs")
 const nodemailer = require('nodemailer')
 const hbs = require('nodemailer-express-handlebars')
 const keys = require('@config/config')
+const { google } = require("googleapis")
+const OAuth2 = google.auth.OAuth2
 
 module.exports.sendEmail = (emails, user, params) => {
   return new Promise((resolve, reject) => {
 
     let transporter, hbsOptions, mailOptions
+
+    // Obtain An Access Token
+    const oauth2Client = new OAuth2 (
+      keys.googleClientID,
+      keys.googleClientSecret,
+      'https://developers.google.com/oauthplayground'
+    )
+
+    oauth2Client.setCredentials({ refresh_token: user.refreshToken })
+    const accessToken = oauth2Client.getAccessToken()
 
     // SMTP Transport
     transporter = nodemailer.createTransport({
@@ -44,7 +56,7 @@ module.exports.sendEmail = (emails, user, params) => {
       context: params.context,
       auth: {
         user: user.email,
-        accessToken: user.accessToken,
+        accessToken: accessToken,
         refreshToken: user.refreshToken
       }
     }
