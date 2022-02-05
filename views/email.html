@@ -78,12 +78,12 @@
  <!-- First block: Header banner -->
 					<tr>
 						<td>
-							<img src='https://email-sending.herokuapp.com/img/banner.png' alt='Header'width='612px' height='95px' style="min-width:612px">
+							<img src='https://i.ibb.co/cQ3PHNy/header-Banner.png' alt='Header'width='612px' height='95px' style="min-width:612px">
 						</td>
 					</tr>
  <!-- Second block: Name and position -->
 					<tr>
-						<td style='padding:30px 30px 10px 30px'>
+						<td style='padding:15px 30px 0px 30px'>
 							<table>
 								<h1>{{name}}</h1>
 								<h2>{{position}}</h2>
@@ -92,7 +92,7 @@
 					</tr>
  <!-- Third block: Main info -->
 					<tr>
-						<td style='padding:0px 30px 30px 30px'>
+						<td style='padding:0px 30px 5px 30px'>
 							<table width='100%' style='border-spacing:5px'>
 								<tr>
 									<td style="display:table;width:100%;">
@@ -114,7 +114,7 @@
 										">
 											<tr>
 												<td>
-													<p>{{bio}} <a href=`{{resumeLink}}`>Review resume</a></p>
+													<p>{{bio}}. <a href=`{{resumeLink}}`>Review resume</a></p>
 												</td>
 											</tr>
 										</table>
@@ -296,8 +296,7 @@
 										">
 											<tr>
 												<td>
-													<p>{{testTask}}
-													{{#if testLink}} <a href=`{{testLink}}`>Review test</a></p> {{/if}}
+													<p>{{testTask}}. <a href=`{{testLink}}`>Review test</a></p>
 												</td>
 											</tr>
 										</table>
@@ -323,8 +322,7 @@
 										">
 											<tr>
 												<td>
-													<p>{{techInterview}}
-													{{#if interviewLink}} <a href=`{{interviewLink}}`>Review inteview</a></p> {{/if}}
+													<p>{{techInterview}}. <a href=`{{interviewLink}}`>Review inteview</a></p>
 												</td>
 											</tr>
 										</table>
@@ -361,19 +359,18 @@
 					</tr>
 <!-- Fourth block: Summary -->
 					<tr style='background:#F4F4F4'>
-						<td style="padding:30px">
+						<td style="padding:15px 30px 15px 30px">
 							<table>
 								<h1>Summary</h1>
-								<!-- For each element in the array: summary, display a <li> tag -->
 								{{#each summary}}<p style='padding-bottom:10px'>{{this}}</p>{{/each}}
 							</table>
 						</td>
 					</tr>
 <!-- 5th block: Tech Interview feedback -->
           			<tr>
-						<td style="padding:30px">
+						<td style="padding:15px 30px 15px 30px">
 							<table style='border-spacing:5px'>
-								<h1 style='padding-bottom:5px'>Technical interview feedback</h1>
+								<h1>Technical interview feedback</h1>
 								<tr>
 									<td style="display:table;width:100%;">
 										<table style="
@@ -442,7 +439,7 @@
 					</tr>
 <!-- Fourth block: Summary -->
 					<tr style='background:#F4F4F4'>
-						<td style="padding:30px">
+						<td style="padding:15px 30px 15px 30px">
 							<table>
 								<h1>Schedule a meeting with {{name}}</h1>
 								<p style='padding-top:10px'>{{name}} is available for an interview on:</p>
