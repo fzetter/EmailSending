@@ -362,14 +362,14 @@
 						<td style="padding:15px 30px 15px 30px">
 							<table>
 								<h1>Summary</h1>
-								{{#each summary}}<p style='padding-bottom:10px'>{{this}}</p>{{/each}}
+								{{#each summary}}<p style='padding-top:10px'>{{this}}</p>{{/each}}
 							</table>
 						</td>
 					</tr>
 <!-- 5th block: Tech Interview feedback -->
-          			<tr>
+          <tr>
 						<td style="padding:15px 30px 15px 30px">
-							<table style='border-spacing:5px'>
+							<table style='border-spacing:1px'>
 								<h1>Technical interview feedback</h1>
 								<tr>
 									<td style="display:table;width:100%;">
@@ -394,7 +394,7 @@
 													<table>
 														<ul style="margin-top:3.5px">
 															<!-- For each element in the array: prosArray, display a <li> tag -->
-															{{#each prosArray}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
+                              {{#each prosArray}}<li>{{this}}</li>{{/each}}
 														</ul>
 													</table>
 												</td>
@@ -425,7 +425,7 @@
 													<table>
 														<ul style="margin-top:3.5px">
 															<!-- For each element in the array: consArray, display a <li> tag -->
-															{{#each consArray}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
+                                {{#each consArray}}<li>{{this}}</li>{{/each}}
 														</ul>
 													</table>
 												</td>
@@ -445,7 +445,7 @@
 								<p style='padding-top:10px'>{{name}} is available for an interview on:</p>
 								<ul style="padding-top:5px">
 									<!-- For each element in the array: scheduleArray, display a <li> tag -->
-									{{#each scheduleArray}}<li style='padding-bottom:10px'>{{this}}</li>{{/each}}
+                  {{#each scheduleArray}}<li>{{this}}</li>{{/each}}
 								</ul>
 							</table>
 						</td>
