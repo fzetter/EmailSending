@@ -296,7 +296,8 @@
 										">
 											<tr>
 												<td>
-													<p>{{testTask}}. <a href=`{{testLink}}`>Review test</a></p>
+													<p>{{testTask}}
+													{{#if testLink}} <a href=`{{testLink}}`>Review test</a></p> {{/if}}
 												</td>
 											</tr>
 										</table>
@@ -322,7 +323,8 @@
 										">
 											<tr>
 												<td>
-													<p>{{techInterview}}. <a href=`{{interviewLink}}`>Review inteview</a></p>
+													<p>{{techInterview}}
+													{{#if interviewLink}} <a href=`{{interviewLink}}`>Review inteview</a></p> {{/if}}
 												</td>
 											</tr>
 										</table>
@@ -362,6 +364,7 @@
 						<td style="padding:15px 30px 15px 30px">
 							<table>
 								<h1>Summary</h1>
+								<!-- For each element in the array: summary, display a <li> tag -->
 								{{#each summary}}<p style='padding-top:10px'>{{this}}</p>{{/each}}
 							</table>
 						</td>
