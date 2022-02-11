@@ -114,7 +114,7 @@
 										">
 											<tr>
 												<td>
-													<p>{{bio}} <a href=`{{resumeLink}}`>Review resume</a></p>
+													<p>{{bio}} <a href=`{{resumeLink}}`><b>Review resume</b></a></p>
 												</td>
 											</tr>
 										</table>
@@ -297,12 +297,43 @@
 											<tr>
 												<td>
 													<p>{{testTask}}
-													{{#if testLink}} <a href=`{{testLink}}`>Review test</a> {{/if}} </p>
+														{{#if testLink}} <a href=`{{testLink}}`>Review test</a> {{/if}}
+													</p>
 												</td>
 											</tr>
 										</table>
 									</td>
 								</tr>
+<!-- Removable | Code sample -->
+								{{#if codeLink}}
+								<tr>
+									<td style="display:table;width:100%;">
+										<table style="
+											display: inline-block;
+											vertical-align: top;
+											width:35%;
+										">
+											<tr>
+												<td>
+													<h3>Code Sample</h3>
+												</td>
+											</tr>
+										</table>
+										<table style="
+											display: inline-block;
+											vertical-align: top;
+											width:65%;
+										">
+											<tr>
+												<td>
+													<p><a href=`{{codeLink}}`>Review code</a></p>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								{{/if}}
+<!-- End of removable block: Code sample -->
 								<tr>
 									<td style="display:table;width:100%;">
 										<table style="
@@ -324,7 +355,8 @@
 											<tr>
 												<td>
 													<p>{{techInterview}}
-													{{#if interviewLink}} <a href=`{{interviewLink}}`>Review inteview</a> {{/if}} </p>
+														{{#if interviewLink}} <a href=`{{interviewLink}}`>Review inteview</a> {{/if}}
+													</p>
 												</td>
 											</tr>
 										</table>
@@ -359,19 +391,9 @@
 							</table>
 						</td>
 					</tr>
-<!-- Fourth block: Summary -->
-					<tr style='background:#F4F4F4'>
-						<td style="padding:15px 30px 15px 30px">
-							<table>
-								<h1>Summary</h1>
-								<!-- For each element in the array: summary, display a <li> tag -->
-								{{#each summary}}<p style='padding-top:10px'>{{this}}</p>{{/each}}
-							</table>
-						</td>
-					</tr>
-<!-- 5th block: Tech Interview feedback -->
+<!-- 4th block: Tech Interview feedback -->
           <tr>
-						<td style="padding:15px 30px 15px 30px">
+						<td style="padding:15px 30px 15px 30px;background:#F4F4F4">
 							<table style='border-spacing:1px'>
 								<h1>Technical interview feedback</h1>
 								<tr>
@@ -396,7 +418,6 @@
 												<td>
 													<table>
 														<ul style="margin-top:3.5px">
-															<!-- For each element in the array: prosArray, display a <li> tag -->
                               {{#each prosArray}}<li>{{this}}</li>{{/each}}
 														</ul>
 													</table>
@@ -427,7 +448,6 @@
 												<td>
 													<table>
 														<ul style="margin-top:3.5px">
-															<!-- For each element in the array: consArray, display a <li> tag -->
                                 {{#each consArray}}<li>{{this}}</li>{{/each}}
 														</ul>
 													</table>
@@ -440,16 +460,26 @@
 							</table>
 						</td>
 					</tr>
-<!-- Fourth block: Summary -->
-					<tr style='background:#F4F4F4'>
+<!-- Removable | 5th block: Schedule meeting -->
+					{{#if scheduleArray}}
+					<tr>
 						<td style="padding:15px 30px 15px 30px">
 							<table>
 								<h1>Schedule a meeting with {{name}}</h1>
 								<p style='padding-top:10px'>{{name}} is available for an interview on:</p>
 								<ul style="padding-top:5px">
-									<!-- For each element in the array: scheduleArray, display a <li> tag -->
                   {{#each scheduleArray}}<li>{{this}}</li>{{/each}}
 								</ul>
+							</table>
+						</td>
+					</tr>
+					{{/if}}
+<!-- End of removable block: Schedule meeting -->
+<!-- 6th block: Action text -->
+					<tr>
+						<td style="padding:15px 30px 15px 30px; background:#F4F4F4">
+							<table>
+                  <h3>What day/time would work for you to set up an interview?</h3>
 							</table>
 						</td>
 					</tr>

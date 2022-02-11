@@ -13,7 +13,8 @@
                 <!-- *** -->
                 <div class="form-group">
                     <label for="subject">Email Subject *</label>
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required
+                    <input type="text" class="form-control" name="subject" id="subject"
+                    placeholder="William Jordan - Junior PHP Developer" required
                     value="William Jordan - Junior PHP Developer">
                 </div>
 
@@ -38,8 +39,9 @@ example@agileengine.com"></textarea>
                 <!-- *** -->
                 <div class="form-group">
                     <label for="name">Candidate's Name *</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Name" required
-                    value="William Jordan">
+                    <input type="text" class="form-control" name="name" id="name"
+                    placeholder="William Jordan"
+                    value="William Jordan" required>
                 </div>
 
                 <!-- *** -->
@@ -118,7 +120,6 @@ example@agileengine.com"></textarea>
                     <option>Very Good</option>
                     <option>Good</option>
                     <option>Average</option>
-                    <option>Poor</option>
                   </select>
                 </div>
 
@@ -131,6 +132,13 @@ example@agileengine.com"></textarea>
 
                 <!-- *** -->
                 <div class="form-group">
+                    <label for="codeLink">Code Sample</label>
+                    <input type="text" class="form-control" name="codeLink" id="codeLink"
+                    placeholder="Code Sample" value="http://example.com/">
+                </div>
+
+                <!-- *** -->
+                <div class="form-group">
                   <label for="techInterview">Tech Interview *</label>
                   <select class="form-control" name="techInterview" id="techInterview" required>
                     <option value="" hidden disabled>-- Please select -- </option>
@@ -138,7 +146,6 @@ example@agileengine.com"></textarea>
                     <option selected>Very Good</option>
                     <option>Good</option>
                     <option>Average</option>
-                    <option>Poor</option>
                   </select>
                 </div>
 
@@ -158,14 +165,7 @@ example@agileengine.com"></textarea>
                     <option>Very Good</option>
                     <option selected>Good</option>
                     <option>Average</option>
-                    <option>Poor</option>
                   </select>
-                </div>
-
-                <!-- *** -->
-                <div class="form-group">
-                    <label for="summary">Summary *</label>
-                    <textarea type="text" class="form-control" name="summary" id="summary" placeholder="Summary" required>Candidate’s Name is already a key part of the AgileEngine team, he is currently looking for his next big challenge, after the termination of his current project. Nonetheless, below you can find the feedback from his current team at AgileEngine.</textarea>
                 </div>
 
                 <!-- *** -->
@@ -188,8 +188,8 @@ No experience with Jenkins.</textarea>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="scheduleArray">Schedule (insert each option on a new line, ONLY DATES AND TIMES as shown in the example) *</label>
-                    <textarea type="text" class="form-control" name="scheduleArray" id="scheduleArray" placeholder="Schedule" required>Monday, October 18th, between 12 pm and 2 pm (PDT)
+                    <label for="scheduleArray">Schedule (insert each option on a new line, ONLY DATES AND TIMES as shown in the example)</label>
+                    <textarea type="text" class="form-control" name="scheduleArray" id="scheduleArray" placeholder="Schedule">Monday, October 18th, between 12 pm and 2 pm (PDT)
 Tuesday, October 19th, from 9 am to 2 pm (PDT)
 Wednesday, October 20th, from 11 am to 2 pm (PDT)</textarea>
                 </div>
