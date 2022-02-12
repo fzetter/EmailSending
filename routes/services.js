@@ -16,6 +16,7 @@ module.exports = app => {
       })
 
       res.render('message', {
+        title: 'Sent',
         recruiterEmail: req.user.email,
         candidateEmail: body.emailArray,
         cc: body.ccArray
@@ -23,6 +24,7 @@ module.exports = app => {
 
     } catch(e) {
       e.status = e.status || 500
+      e.title = 'Error'
       res.locals.message = e.message
       res.locals.error = e
       res.render('error', e)

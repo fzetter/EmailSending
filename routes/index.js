@@ -14,7 +14,7 @@ module.exports = app => {
     // if (req.user) res.redirect('/form')
     // else res.render('login')
     if (req.user) delete req.user.body
-    res.render('login')
+    res.render('login', {title: 'Login'})
   })
 
   app.post('/', passport.authenticate('google', {

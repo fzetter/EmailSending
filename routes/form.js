@@ -12,6 +12,7 @@ module.exports = app => {
     if (req.user) {
       const template = (!!req.query.eg ? 'example' : 'form')
       const body = req.user.body || {}
+      body.title = 'Form'
       body.recruiterEmail = req.user.email
       res.render(template, body)
     }
@@ -21,6 +22,7 @@ module.exports = app => {
   app.post('/form', async (req, res) => {
     try {
       const body = req.body
+      body.title = 'Preview'
       if (body.emailArray) body.emailArray = body.emailArray.split('\r\n')
       if (body.ccArray) body.ccArray = body.ccArray.split('\r\n')
       if (body.prosArray) body.prosArray = body.prosArray.split('\r\n')
@@ -31,6 +33,7 @@ module.exports = app => {
 
     } catch(e) {
       e.status = e.status || 500
+      e.title = 'Error'
       res.locals.message = e.message
       res.locals.error = e
       res.render('error', e)
