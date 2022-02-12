@@ -23,7 +23,7 @@
                     <label for="emailArray">To (insert each client email on a new line) *</label>
                     <textarea type="text" class="form-control" name="emailArray" id="emailArray" required
                     placeholder="example@gmail.com
-example@gmail.com"></textarea>
+example@gmail.com">{{#if emailArray}}{{#each emailArray}}{{this}}{{#if @last}}{{else}}&#13;{{/if}}{{/each}}{{/if}}</textarea>
                 </div>
 
                 <!-- *** -->
@@ -31,7 +31,7 @@ example@gmail.com"></textarea>
                     <label for="ccArray">CC (insert each email on a new line)</label>
                     <textarea type="text" class="form-control" name="ccArray" id="ccArray"
                     placeholder="example@agileengine.com
-example@agileengine.com"></textarea>
+example@agileengine.com">{{#if ccArray}}{{#each ccArray}}{{this}}{{#if @last}}{{else}}&#13;{{/if}}{{/each}}{{/if}}</textarea>
                 </div>
 
                 <legend>Candidate Submission:</legend>
@@ -190,19 +190,21 @@ example@agileengine.com"></textarea>
                 <!-- *** -->
                 <div class="form-group">
                     <label for="prosArray">Pros (insert each skill on a new line) *</label>
-                    <textarea type="text" class="form-control" name="prosArray" id="prosArray"
+                    <textarea type="text" class="form-control" name="prosArray" id="prosArray" required
                     placeholder="Experience with frontend automation (Java and Python using Selenium Webdriver).
 He uses git as code repository and sometimes implements Cucumber/Gherkin for BDD.
-Experience with Agile Methodologies (Scrum and Kanban) using Jira and Confluence." required></textarea>
+Experience with Agile Methodologies (Scrum and Kanban) using Jira and Confluence."
+>{{#if prosArray}}{{#each prosArray}}{{this}}{{#if @last}}{{else}}&#13;{{/if}}{{/each}}{{/if}}</textarea>
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="consArray">Cons (insert each skill on a new line) *</label>
-                    <textarea type="text" class="form-control" name="consArray" id="consArray"
+                    <textarea type="text" class="form-control" name="consArray" id="consArray" required
                     placeholder="No experience with backend automation (just a little Postman for manual).
 No experience with mobile automation.
-No experience with e-commerce." required></textarea>
+No experience with e-commerce."
+>{{#if consArray}}{{#each consArray}}{{this}}{{#if @last}}{{else}}&#13;{{/if}}{{/each}}{{/if}}</textarea>
                 </div>
 
                 <!-- *** -->
@@ -211,7 +213,8 @@ No experience with e-commerce." required></textarea>
                     <textarea type="text" class="form-control" name="scheduleArray" id="scheduleArray"
                     placeholder="Monday, October 18th, between 12 pm and 2 pm (PDT)
 Tuesday, October 19th, from 9 am to 2 pm (PDT)
-Wednesday, October 20th, from 11 am to 2 pm (PDT)"></textarea>
+Wednesday, October 20th, from 11 am to 2 pm (PDT)"
+>{{#if scheduleArray}}{{#each scheduleArray}}{{this}}{{#if @last}}{{else}}&#13;{{/if}}{{/each}}{{/if}}</textarea>
                 </div>
 
                 <!-- Preview -->
