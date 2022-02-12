@@ -4,16 +4,29 @@ const mailer = require('@modules/mailer.js')
 module.exports = app => {
 
   app.post('/email/send', async (req, res) => {
+    try {
 
-    const emails = req.body.emails
-    const params = {
-      replyTo: 'fernanda.zetter@agileengine.com',
-      subject: 'Simple Transactional Email',
-      context: req.body
+      const body = req.user.body
+      delete req.user.body
+
+      const response = await mailer.sendEmail(body.emailArray, req.user, {
+        subject: body.subject,
+        cc: body.ccArray,
+        context: body
+      })
+
+      res.render('message', {
+        recruiterEmail: req.user.email,
+        candidateEmail: body.emailArray,
+        cc: body.ccArray
+      })
+
+    } catch(e) {
+      e.status = e.status || 500
+      res.locals.message = e.message
+      res.locals.error = e
+      res.render('error', e)
     }
-
-    const response = await mailer.sendEmail(emails, params)
-    res.status(200).send(response)
   })
 
 }

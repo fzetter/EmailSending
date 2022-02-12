@@ -1,0 +1,458 @@
+<!-- BACK / SEND BUTTONS -->
+<center style='width:100%;max-width:610px;margin:0 auto'>
+  <div class="container" width=600px; style="max-width: 500px; padding-bottom: 2em;">
+      <table>
+        <tr>
+           <td>
+             <!-- RETURN -->
+             <form action="/form" method="get">
+               <div class="container" style="max-width: 200px; padding-top: 1.5em;">
+                 <button type="submit" class="btn btn-block" style="background-color: #FFFFFF;
+                   height: 50px; color: #3F8CFF; border-radius: 8px; border: 1px solid #3F8CFF;">
+                   RETURN
+                 </button>
+               </div>
+             </form>
+           </td>
+           <td>
+             <!-- SEND -->
+             <form action="/email/send" method="post">
+               <div class="container" style="max-width: 200px; padding-top: 1.5em;">
+                 <button type="submit" class="btn btn-block" style="background-color: #EB9121;
+                   height: 50px; color: #FFF; border-radius: 8px;">
+                   SEND
+                 </button>
+               </div>
+             </form>
+           </td>
+        </tr>
+      </table>
+  </div>
+</center>
+
+<!-- EMAIL BODY PREVIEW -->
+<center style='width:100%;max-width:610px;background-color:#FFFFFF;margin:0 auto'>
+	<div style='max-width:610px;background-color: #FFFFFF'>
+		<table align='center' style="
+			margin: 0 auto;
+			width: 100%;
+			max-width: 610px;
+			border-spacing: 0;
+			font-family: 'Montserrat', sans-serif;
+			color: #333333;
+			background-color: #FFFFFF;"
+		>
+<!-- First block: Header banner -->
+			<tr>
+				<td>
+					<img src='https://i.ibb.co/cQ3PHNy/header-Banner.png' alt='Header'width=100%; height='95px' style="min-width:612px">
+				</td>
+			</tr>
+<!-- Second block: Name and position -->
+			<tr>
+				<td style='padding:15px 30px 0px 30px'>
+					<table>
+						<h1>{{name}}</h1>
+						<h2>{{position}}</h2>
+					</table>
+				</td>
+			</tr>
+<!-- Third block: Main info -->
+			<tr>
+				<td style='padding:0px 30px 5px 30px'>
+					<table width='100%' style='border-spacing:5px'>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Bio</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{bio}} <a href=`{{resumeLink}}`><b>Review resume</b></a></p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Experience</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{experience}}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Location</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{location}}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Earliest availability</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{earliestAvailability}}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>English</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{english}}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Expert</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{expert}}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Intermediate</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{intermediate}}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Test task</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{testTask}}
+												{{#if testLink}} <a href=`{{testLink}}`>Review test</a> {{/if}}
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+<!-- Removable | Code sample -->
+						{{#if codeLink}}
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Code Sample</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p><a href=`{{codeLink}}`>Review code</a></p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						{{/if}}
+<!-- End of removable block: Code sample -->
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Tech interview</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{techInterview}}
+												{{#if interviewLink}} <a href=`{{interviewLink}}`>Review inteview</a> {{/if}}
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:35%;
+								">
+									<tr>
+										<td>
+											<h3>Soft skills</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width:65%;
+								">
+									<tr>
+										<td>
+											<p>{{softSkills}}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+<!-- 4th block: Tech Interview feedback -->
+      <tr>
+				<td style="padding:15px 30px 15px 30px;background:#F4F4F4">
+					<table style='border-spacing:1px'>
+						<h1>Technical interview feedback</h1>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width: 10%;
+								">
+									<tr>
+										<td>
+											<h3>Pros</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width: 90%;
+								">
+									<tr>
+										<td>
+											<table>
+												<ul style="margin-top:3.5px">
+                          {{#each prosArray}}<li>{{this}}</li>{{/each}}
+												</ul>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="display:table;width:100%;">
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width: 10%;
+								">
+									<tr>
+										<td>
+											<h3 style='margin-top:-3.5px'>Cons</h3>
+										</td>
+									</tr>
+								</table>
+								<table style="
+									display: inline-block;
+									vertical-align: top;
+									width: 90%;
+								">
+									<tr>
+										<td>
+											<table>
+												<ul style="margin-top:3.5px">
+                            {{#each consArray}}<li>{{this}}</li>{{/each}}
+												</ul>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+
+						</tr>
+					</table>
+				</td>
+			</tr>
+<!-- Removable | 5th block: Schedule meeting -->
+			{{#if scheduleArray}}
+			<tr>
+				<td style="padding:15px 30px 15px 30px">
+					<table>
+						<h1>Schedule a meeting with {{name}}</h1>
+						<p style='padding-top:10px'>{{name}} is available for an interview on:</p>
+						<ul style="padding-top:5px">
+              {{#each scheduleArray}}<li>{{this}}</li>{{/each}}
+						</ul>
+					</table>
+				</td>
+			</tr>
+			{{/if}}
+<!-- End of removable block: Schedule meeting -->
+<!-- 6th block: Action text -->
+			<tr>
+				<td style="padding:15px 30px 15px 30px; background:#F4F4F4">
+					<table>
+              <h3>What day/time would work for you to set up an interview?</h3>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</center>
+<!-- END EMAIL BODY PREVIEW -->
+
+<div class="container" width=600px; style="max-width: 500px; padding-bottom: 2em;"></div>
