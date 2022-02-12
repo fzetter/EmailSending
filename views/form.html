@@ -14,7 +14,8 @@
                 <div class="form-group">
                     <label for="subject">Email Subject *</label>
                     <input type="text" class="form-control" name="subject" id="subject" required
-                    placeholder="William Jordan - Junior PHP Developer">
+                    placeholder="William Jordan - Junior PHP Developer"
+                    value="{{subject}}">
                 </div>
 
                 <!-- *** -->
@@ -39,59 +40,68 @@ example@agileengine.com"></textarea>
                 <div class="form-group">
                     <label for="name">Candidate's Name *</label>
                     <input type="text" class="form-control" name="name" id="name" required
-                    placeholder="William Jordan">
+                    placeholder="William Jordan"
+                    value="{{name}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="position">Position *</label>
                     <input type="text" class="form-control" name="position" id="position" required
-                    placeholder="Junior Backend Developer">
+                    placeholder="Junior Backend Developer"
+                    value="{{position}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="bio">Bio *</label>
                     <input type="text" class="form-control" name="bio" id="bio" required
-                    placeholder="Highly talented Full Stack Engineer that could be a great fit for the Zumper team.">
+                    placeholder="Highly talented Full Stack Engineer that could be a great fit for the Zumper team."
+                    value="{{bio}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="resumeLink">CV Link *</label>
-                    <input type="text" class="form-control" name="resumeLink" id="resumeLink"
-                    placeholder="https://example.com/" required>
+                    <input type="text" class="form-control" name="resumeLink" id="resumeLink" required
+                    placeholder="https://example.com/"
+                    value="{{resumeLink}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="experience">Years of Experience *</label>
                     <input type="text" class="form-control" name="experience" id="experience" required
-                    placeholder="5 years">
+                    placeholder="5 years"
+                    value="{{experience}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="location">Location *</label>
                     <input type="text" class="form-control" name="location" id="location" required
-                    placeholder="Bogotá, Colombia">
+                    placeholder="Bogotá, Colombia"
+                    value="{{location}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="earliestAvailability">Earliest Availability (number of weeks after approval) *</label>
-                    <input type="text" class="form-control" name="earliestAvailability" id="earliestAvailability"
-                    placeholder="2 weeks after approval" required>
+                    <input type="text" class="form-control" name="earliestAvailability" id="earliestAvailability" required
+                    placeholder="2 weeks after approval"
+                    value="{{earliestAvailability}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                   <label for="english">English *</label>
                   <select class="form-control" name="english" id="english" required>
-                    <option value="" hidden selected disabled>-- Please select -- </option>
-                    <option>Intermediate</option>
-                    <option>Upper-Intermediate</option>
-                    <option>Advanced</option>
+                    {{#select english}}
+                    <option value="" hidden disabled selected>-- Please select -- </option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Upper-Intermediate">Upper-Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    {{/select}}
                   </select>
                 </div>
 
@@ -99,25 +109,29 @@ example@agileengine.com"></textarea>
                 <div class="form-group">
                     <label for="expert">Expert *</label>
                     <input type="text" class="form-control" name="expert" id="expert" required
-                    placeholder="Node.js, Angular, Redux Hooks, MVV, MVVM">
+                    placeholder="Node.js, Angular, Redux Hooks, MVV, MVVM"
+                    value="{{expert}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                     <label for="intermediate">Intermediate *</label>
-                    <input type="text" class="form-control" name="intermediate" id="intermediate"
-                    placeholder="React Native, React.js" required>
+                    <input type="text" class="form-control" name="intermediate" id="intermediate" required
+                    placeholder="React Native, React.js"
+                    value="{{intermediate}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                   <label for="testTask">Test Task *</label>
                   <select class="form-control" name="testTask" id="testTask" required>
-                    <option value="" hidden selected disabled>-- Please select -- </option>
-                    <option>Excellent</option>
-                    <option>Very Good</option>
-                    <option>Good</option>
-                    <option>Average</option>
+                    {{#select testTask}}
+                    <option value="" hidden disabled selected>-- Please select -- </option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Good">Good</option>
+                    <option value="Average">Average</option>
+                    {{/select}}
                   </select>
                 </div>
 
@@ -125,25 +139,29 @@ example@agileengine.com"></textarea>
                 <div class="form-group">
                     <label for="testLink">Test Link</label>
                     <input type="text" class="form-control" name="testLink" id="testLink"
-                    placeholder="https://example.com/">
+                    placeholder="https://example.com/"
+                    value="{{testLink}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="codeSample">Code Sample</label>
-                    <input type="text" class="form-control" name="codeSample" id="codeSample"
-                    placeholder="https://example.com/">
+                    <label for="codeLink">Code Sample</label>
+                    <input type="text" class="form-control" name="codeLink" id="codeLink"
+                    placeholder="https://example.com/"
+                    value="{{codeLink}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                   <label for="techInterview">Tech Interview *</label>
                   <select class="form-control" name="techInterview" id="techInterview" required>
-                    <option value="" hidden selected disabled>-- Please select -- </option>
-                    <option>Excellent</option>
-                    <option>Very Good</option>
-                    <option>Good</option>
-                    <option>Average</option>
+                    {{#select techInterview}}
+                    <option value="" hidden disabled selected>-- Please select -- </option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Good">Good</option>
+                    <option value="Average">Average</option>
+                    {{/select}}
                   </select>
                 </div>
 
@@ -151,18 +169,21 @@ example@agileengine.com"></textarea>
                 <div class="form-group">
                     <label for="interviewLink">Interview Link</label>
                     <input type="text" class="form-control" name="interviewLink" id="interviewLink"
-                    placeholder="https://example.com/">
+                    placeholder="https://example.com/"
+                    value="{{interviewLink}}">
                 </div>
 
                 <!-- *** -->
                 <div class="form-group">
                   <label for="softSkills">Soft Skills *</label>
                   <select class="form-control" name="softSkills" id="softSkills" required>
-                    <option value="" hidden selected disabled>-- Please select -- </option>
-                    <option>Excellent</option>
-                    <option>Very Good</option>
-                    <option>Good</option>
-                    <option>Average</option>
+                    {{#select softSkills}}
+                    <option value="" hidden disabled selected>-- Please select -- </option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Good">Good</option>
+                    <option value="Average">Average</option>
+                    {{/select}}
                   </select>
                 </div>
 

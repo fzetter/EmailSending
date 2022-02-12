@@ -13,6 +13,7 @@ module.exports = app => {
   app.get('/', (req, res) => {
     // if (req.user) res.redirect('/form')
     // else res.render('login')
+    if (req.user) delete req.user.body
     res.render('login')
   })
 

@@ -1,10 +1,20 @@
 const config = require('@config/config')
+const hbs =  require('hbs')
+
+hbs.registerHelper('select', function(selected, options) {
+  const regex = `value=\"${selected}\"`
+  return options.fn(this).replace(new RegExp(regex), '$& selected="selected"')
+})
 
 module.exports = app => {
 
   app.get('/form', (req, res) => {
-    const template = (req.query.eg === 'true' ? 'example' : 'form')
-    if (req.user) res.render(template, { recruiterEmail: req.user.email })
+    if (req.user) {
+      const template = (!!req.query.eg ? 'example' : 'form')
+      const body = req.user.body || {}
+      body.recruiterEmail = req.user.email
+      res.render(template, body)
+    }
     else res.redirect('/')
   })
 
