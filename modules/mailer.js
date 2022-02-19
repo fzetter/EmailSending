@@ -1,4 +1,3 @@
-const fs = require("fs")
 const nodemailer = require('nodemailer')
 const hbs = require('nodemailer-express-handlebars')
 const keys = require('@config/config')

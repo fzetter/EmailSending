@@ -1,5 +1,6 @@
 const config = require('@config/config')
 const mailer = require('@modules/mailer.js')
+const { download } = require('@modules/download.js')
 
 module.exports = app => {
 
@@ -28,6 +29,18 @@ module.exports = app => {
       res.locals.message = e.message
       res.locals.error = e
       res.render('error', e)
+    }
+  })
+
+  app.post('/download/bulk', async (req, res) => {
+    try {
+
+      if (!!!req.body.jobId || !!!req.body.accessToken) throw new Error('Invalid fields')
+      const result = await download(req.body)
+      res.send(result)
+
+    } catch(e) {
+      res.send({ status: 401, message: e.message })
     }
   })
 
