@@ -4,7 +4,7 @@ const https = require('https')
 module.exports.download = body => {
   return new Promise((resolve, reject) => {
 
-    const file = fs.createWriteStream('bulk.csv')
+    const file = fs.createWriteStream(`data/${body.jobId}.zip`)
 
     const options = {
       hostname: 'recruit.zoho.com',
@@ -27,6 +27,7 @@ module.exports.download = body => {
         })
       }
 
+      const name = res.headers['content-disposition'].match(/"(.*)"/)[1]
       res.pipe(file)
 
     })
