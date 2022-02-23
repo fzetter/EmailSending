@@ -54,14 +54,6 @@ example@agileengine.com">{{#if ccArray}}{{#each ccArray}}{{this}}{{#if @last}}{{
 
                 <!-- *** -->
                 <div class="form-group">
-                    <label for="bio">Bio *</label>
-                    <input type="text" class="form-control" name="bio" id="bio" required
-                    placeholder="Highly talented Full Stack Engineer that could be a great fit for the Zumper team."
-                    value="{{bio}}">
-                </div>
-
-                <!-- *** -->
-                <div class="form-group">
                     <label for="resumeLink">CV Link *</label>
                     <input type="text" class="form-control" name="resumeLink" id="resumeLink" required
                     placeholder="https://example.com/"
@@ -185,6 +177,14 @@ example@agileengine.com">{{#if ccArray}}{{#each ccArray}}{{this}}{{#if @last}}{{
                     <option value="Average">Average</option>
                     {{/select}}
                   </select>
+                </div>
+
+                <!-- *** -->
+                <div class="form-group">
+                    <label for="summary">Summary *</label>
+                    <textarea type="text" class="form-control" name="summary" id="summary" required
+                    placeholder="William Jordan is already a key part of the AgileEngine team, he is currently looking for his next big challenge, after the termination of his current project. Nonetheless, below you can find the feedback from his current team at AgileEngine."
+>{{#if summary}}{{#each summary}}{{this}}{{#if @last}}{{else}}&#13;{{/if}}{{/each}}{{/if}}</textarea>
                 </div>
 
                 <!-- *** -->

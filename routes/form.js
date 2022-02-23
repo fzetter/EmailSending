@@ -25,6 +25,7 @@ module.exports = app => {
       body.title = 'Preview'
       if (body.emailArray) body.emailArray = body.emailArray.split('\r\n')
       if (body.ccArray) body.ccArray = body.ccArray.split('\r\n')
+      if (body.summary) body.summary = body.summary.split('\r\n')
       if (body.prosArray) body.prosArray = body.prosArray.split('\r\n')
       if (body.consArray) body.consArray = body.consArray.split('\r\n')
       if (body.scheduleArray) body.scheduleArray = body.scheduleArray.split('\r\n')
