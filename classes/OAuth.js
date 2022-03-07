@@ -11,8 +11,13 @@ const oauth2Client = new OAuth2 (
 class OAuth {
 
   static getAccessToken (refreshToken) {
-    oauth2Client.setCredentials({ refresh_token: refreshToken })
-    return oauth2Client.refreshAccessToken()
+    try {
+      
+      oauth2Client.setCredentials({ refresh_token: refreshToken })
+      const token = oauth2Client.refreshAccessToken()
+      return Promise.resolve(token)
+
+    } catch (err) { return Promise.reject(err) }
   }
 
 }
