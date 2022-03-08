@@ -1,5 +1,6 @@
-const config = require('@config/config')
 const hbs =  require('hbs')
+const config = require('@config/config')
+const { getTokenData } = require('@modules/token')
 
 hbs.registerHelper('select', function(selected, options) {
   const regex = `value=\"${selected}\"`
@@ -8,8 +9,9 @@ hbs.registerHelper('select', function(selected, options) {
 
 module.exports = app => {
 
-  app.get('/form', (req, res) => {
-    if (req.user) {
+  app.get('/form', async (req, res) => {
+    const tokenData = await getTokenData(req.user.accessToken)
+    if (req.user && tokenData !== false) {
       const template = (!!req.query.eg ? 'example' : 'form')
       const body = req.user.body || {}
       body.title = 'Form'

@@ -21,7 +21,6 @@ passport.use(
           email: profile._json.email,
           accessToken: accessToken,
           refreshToken: refreshToken,
-          expiresIn: params.expires_in,
           displayName: profile.displayName
         }
 
