@@ -10,8 +10,8 @@ hbs.registerHelper('select', function(selected, options) {
 module.exports = app => {
 
   app.get('/form', async (req, res) => {
-    const tokenData = await getTokenData(req.user.accessToken)
-    if (req.user && tokenData !== false) {
+    const loggedIn = req.user ? await getTokenData(req.user.accessToken) : false;
+    if (loggedIn !== false) {
       const template = (!!req.query.eg ? 'example' : 'form')
       const body = req.user.body || {}
       body.title = 'Form'
