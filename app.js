@@ -31,7 +31,7 @@ require('./routes/services')(app)
 /* Engine Setup */
 app.set('views', process.cwd() + '/views')
 app.set('view engine', 'html')
-// app.engine('html', require('hbs').__express)
+app.engine('html', require('hbs').__express)
 
 /* Error View Handling */
 app.use((req, res) => {
